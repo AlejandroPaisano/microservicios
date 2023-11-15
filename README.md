@@ -32,5 +32,5 @@ Hacer uso de los dockers ha sido algo divertido, sobre todo por que facilita el 
 
 Aunque sigue teniendo sus limitaciones, por ejemplo, las imagenes se generan como su propio documento, asi que en ocasiones puede ser algo complicao el incorporar nuevas aplicaciones a docker. Ademas de que tuve que aprender aun mas cosas, como el manejo de volumenes para las bases de datos, el como configurar un modelo para obligar a la base de datos a crear una tabla y el como generar un compose que pueda crear la propia base de datos con los requisitos necesarios.
 
-# nota
-Es importante correr el archivo desde el docker compose y con las respectivas carpetas, de otra forma, el propio docker no podra generar la imagen de postgres y la aplicacion no funcionara como es debido
+# Nota
+Es importante correr el archivo desde el docker compose y con las respectivas carpetas, de otra forma, el propio docker no podra generar la imagen de postgres y la aplicacion no funcionara como es debido, se puede acceder a la aplicacion desde la direccion "localhost:3001"

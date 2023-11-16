@@ -10,6 +10,10 @@ Primeramente se rediseño parte de la pagina, el menu inicial sigue siendo el mi
 Lo mismo se ha hecho con la pantalla de objeto para que este se vea de forma mas adeucada a los nuevos aspectos de cada articulo
 ![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/69bc3bd1-ff92-47ce-81a1-5fe3afdc6615)
 
+Y se ha añadido una segunda base de datos que guarda informacion sobre los usuarios, aunque esta no se encuentra en uso actualmente, pero se le pueden enviar queries como a cualquier base de datos. Aqui generamos una tabla usuarios.
+
+![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/e74f9050-2ca1-4d31-9876-2bbc8c383242)
+
 
 Pero lo mas importante se encuentra dentro del objeto YAML.
 
@@ -17,14 +21,25 @@ Pero lo mas importante se encuentra dentro del objeto YAML.
 
 Hemos agregado algunas variables de entorno para poder generar la informacion relevante para la base de datos, adems de que ahora generamos una base de datos, haciendo uso de la imagen oficial de docker, solo que a esta le añadimos algunas variables para la propia base de datos, un usuario, contraseña y el nombre de la propia base de datos donde guardaremos nuestra informacion. Ademas de esto, tambien generaremos nuestro propio volumen, de esta forma, mientras el contenedor no sea borrado, no perderemos la informacion de la base de datos.
 
-Y de hecho podemos observar que la base opera como su propio contenedor desde la aplicacion de docker desktop:
-![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/8378ea7c-4d29-49b9-8df2-9c569b111245)
+Las mismas operaciones son realizadas para la segunda base de datos, solo cambiando el puerto que estamos usano, el nombre del contenedor y el volumen que usa
+
+![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/1f68d95d-263d-467d-8b30-fd3c188e0460)
+
+Y de hecho podemos observar que las bases operan como su propio contenedor desde la aplicacion de docker desktop:
+![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/ec3594d5-fc6b-422b-9e6d-cfc31e4d060d)
+
+
+
+![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/b0590856-f46e-4c12-98f2-19ad68ccd1b9)
+
+Tambien, si usamos Dbeaver, podemos observar que ambas bases de datos tienen su propio contenido
+
 
 No solo eso, si no que con la extension de PortNavigator podemos ver que la base de datos tiene su direccion ip propia e independiente del resto de la aplicacion:
 
- ![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/2cd2314d-888a-45e2-a92e-00a14d7a1647)
+![image](https://github.com/AlejandroPaisano/microservicios/assets/91223611/a0f32ae0-b7de-448c-b66b-5b893452fadc)
 
-En otras palabras, de ser necesario, podriamos empezar a escalar la base de datos sin necesidad de comenzar a esclara el resto de la aplicacion, e incluso podriamos respaldarla sin necesidad de tocar nada del codigo de la aplicacion inicial.
+En otras palabras, de ser necesario, podriamos empezar a escalar la base de datos sin necesidad de comenzar a escalar el resto de la aplicacion, e incluso podriamos respaldarla sin necesidad de tocar nada del codigo de la aplicacion inicial.
 
 # Conclusion
 
